@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Modulo 4 - Prueba 1_2</title>
+</head>
+<body>
+    <div id="app">
+
+        <div class="container">
+            <nav class="level">
+                <p class="title level-item has-text-centered">
+                    Prueba 1_2
+                </p>
+            </nav>
+            <div class="columns is-centered">
+                <ul class="selectionlist">
+                    <li v-for="i in galeria" style="padding: 20px; height: 25px; width: 25px;">
+                        <input type="checkbox" v-model="imagenes" :value="i" v-on:change="sortList()">
+                    </li>
+                </ul>
+            </div>
+            <div v-if="imagenes.length > 0" class="columns is-centered">
+                <div class="column is-one-fifth" v-for="s in imagenes">
+                    <figure class="image is-square">
+                        <img v-bind:src="s.src">
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/script.js" type="module"></script>
+</html>
